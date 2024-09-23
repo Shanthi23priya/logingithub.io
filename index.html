@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+        
+            box-sizing: border-box;
+        }
+        .body
+        {
+            display:grid;
+            border: 5px solid burlywood;
+            width:50vw;
+            height: 100vh;
+            grid-template-rows: 20vh 80vh;
+        }
+        .top
+        {
+            background-color: beige;
+
+        }
+        .bottom
+        {
+            display: flex;
+            justify-content: center;
+            font-size: 25px;
+            background-color: crimson;
+            padding-top: 200px;
+        }
+        input[type=text]
+        {
+            width:100%;
+            height:30px;
+            padding-left:10px;
+            padding-right: 10px;
+            margin-left:20px ;
+           
+        }
+        input[type=password]
+        {
+            width:100%;
+            height:30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 20px;
+
+        }
+        input[type=button] {
+  width: 70%;
+  background-color:beige;
+  font-size: 30px;
+  color: black;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+input[type=button]:hover {
+  background-color: #45a049;
+}
+    </style>
+
+</head>
+<body>
+    <center>
+    <div class="body">
+       <div class="top"> <h1>
+        LOGIN FORM
+      </h1></div>
+        <div class="bottom">
+            <form>
+                <table>
+                    <tr>
+                        <td><label for="fname">ENTER NAME</label></td>
+                          <td>  <input type="text" id="fname" name="fname" value=""></td>
+                     </tr>
+                     <tr>
+                        <td><label for ="password">ENTER PASSWORD</label></td>
+                        <td><input type="password"id="password"name="password"></td>
+                     </tr>
+                    
+        
+                </table>
+                <center>
+                    <input type="button" value="submit" onclick="validateForm(event)">
+                 </center>
+                 <p class="error" id="error-message"></p>
+            </form>
+
+        </div>
+       
+    </div>
+</center>
+<script>
+    function validateForm(event) {
+        var name = document.getElementById("fname").value;
+        var password = document.getElementById("password").value;
+        var errorMessage = document.getElementById("error-message");
+
+        if (name === "" || password === "") {
+            errorMessage.textContent = "Both name and password must be filled out!";
+            return false;
+        } else {
+            errorMessage.textContent = ""; // Clear error message
+            alert("Form Submitted Successfully!");
+        
+            
+            window.location.href = "vernav.html";
+        }
+
+    }
+</script>
+   
+    
+</body>
+</html>
